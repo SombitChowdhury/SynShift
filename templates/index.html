@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SynShift</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🖥️👨‍💻 SynShift</h1>
+  <div class="container">
+    <label for="inputLang">From:</label>
+    <select id="inputLang">
+      <option>Python</option>
+      <option>JavaScript</option>
+      <option>Java</option>
+      <option>C++</option>
+      <option>C</option>
+    </select>
+
+    <label for="outputLang">To:</label>
+    <select id="outputLang">
+      <option>JavaScript</option>
+      <option>Python</option>
+      <option>Java</option>
+      <option>C++</option>
+      <option>C</option>
+    </select>
+
+    <label for="codeInput">Enter your code:</label>
+    <textarea id="codeInput" rows="10" placeholder="Write your code here..."></textarea>
+
+    <button onclick="translateCode()">Translate</button>
+
+    <div id="resultArea">
+      <h3>🔁 Translated Code:</h3>
+      <pre id="translatedCode">Your translated code will appear here...</pre>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
