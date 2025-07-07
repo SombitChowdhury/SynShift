@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify, render_template
 import requests
+import os
+from dotenv import load_dotenv         #if it gives error then install (pip install python-dotenv) in terminal
+load_dotenv()
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 
-API_KEY = ""  # 🔐 Replace with your actual key
+API_KEY = os.getenv("OPENROUTER_API_KEY")  # your actual key in .env file
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 MODEL = "anthropic/claude-sonnet-4"
 
